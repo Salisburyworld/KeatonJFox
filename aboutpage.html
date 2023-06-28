@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Page</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex; /* New */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif, Arial;
+    background-color: #f9f9fa;
+    color: #222;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 2px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    top: 80px; /* To avoid header */
+    bottom: 0;
+}
+ 
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 120px;
+    background: #11141a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+ 
+.logo {
+    font-size: 25px;
+    color: #fff;
+    left: 5px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+nav a:hover,
+nav a.active {
+    color: #ff6a00;
+}
+
+    .container {
+      max-width: 70%;
+      border-collapse: collapse;
+      margin: 0 auto;
+      padding: 40px;
+    }
+
+    .experience.container h1 {
+      max-width: 60%;
+      font-size: 32px;
+      margin-bottom: 2px;
+      word-break: break-all;
+      text-decoration: underline;
+    }
+    .experience.container h2 {
+        max-width: 60%;
+        font-size: 25px;
+      margin-bottom: 2px;
+      font-weight: bold;
+      line-height: 0px;
+      word-break: break-all;
+    }
+    .experience.container h3 {
+        max-width: 60%;
+      font-size: 20px;
+      margin-bottom: 2px;
+      line-height: 0px;
+      font-weight: bold;
+      word-break: break-all;
+      text-decoration: underline;
+    }
+
+    p {
+      font-size: 18px;
+      padding: 40px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .experience.container {
+      max-width: 60%;
+      border-collapse: collapse;
+      margin: 0 auto;
+      padding: 40px;
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      border-style: double;
+      border-width: thin;
+    }
+
+    .k-image img{
+        position: fixed;
+        top: 95px;
+        left: 15px;
+        width: 150px;
+        height: 200px;
+        border-radius: 5%;
+
+    }
+    .image-text small {
+        position: fixed;
+        top: 300px;
+        left: 40px;
+        background-color: transparent;
+        border-color: none;
+    }
+    
+  </style>
+  <script>
+    function openHome(url) {
+        window.location.href = url;
+    }
+    function openAboutMe(url) {
+        window.location.href = url;
+    }
+    function openServices(url) {
+        window.location.href = url;
+    }
+    function openBlog(url) {
+        window.location.href = url;
+    }
+  </script>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Keaton J. Fox</a>
+    
+        <nav>
+            <a href="#home" class="button" onclick="openHome('file:///C:/Users/Keaton%20J/Documents/My%20Web%20Sites/Keaton%20J.%20Fox/home.html')">Home</a>
+            <a href="#aboutme" class="button" onclick="openAboutMe('file:///C:/Users/Keaton%20J/Documents/My%20Web%20Sites/Keaton%20J.%20Fox/aboutpage.html')">About Me</a>
+            <a href="#services" class="button" onclick="openServices('')">Services</a>
+            <a href="#blog" class="button" onclick="openBlog('file:///C:/Users/Keaton%20J/Documents/My%20Web%20Sites/Keaton%20J.%20Fox/bloghome.html')">Blog</a>
+        </nav>
+    </header>
+
+  <div class = "k-image">
+    <img src="Face.jpg">
+  </div>
+
+  <div class = "image-text">
+    <small>Keaton J. Fox</small>
+  </div>
+
+  <div class="container">
+
+    <h1>About Me</h1>
+    <p> 
+        Highly motivated and experienced Environmental Health & Safety professional with proven history of EHS
+        success stemming from process improvements using automation, capital expense projects based on top
+        loss, World Class Manufacturing implementation, and data driven sustainability improvements. Experience
+        in creating EHS procedures for compliance assurance that can be successfully trained, understood, and
+        followed by the hourly workforce.<br><br>
+    </p>
+    
+    <h1>Skills</h1>
+    <p>
+        &#10003 Case Management(OSHA) 
+        <br>&#10003 Environmental Compliance
+        <br>&#10003 RCRA Hazardous Waste Management 
+        <br>&#10003 RC
+        <br>&#10003 OSHA 30-Hour
+        <br>&#10003 HIPAA Training 
+        <br>&#10003 CPR/First-Aid/AED (BLS)
+        <br>&#10003 Autodesk AutoCAD 
+        <br>&#10003 Brady Link360 Software for LOTO & CS
+        <br>&#10003 Advanced Microsoft Office
+        <br>&#10003 Wicklander Investigations
+        <br>&#10003 C/C++ Programming<br><br><br>
+    </p>
+
+    <h1>Experience:</h1>
+
+    <div class = "experience-container">
+        <h2>&#127970 AGCO Corporation, Kansas ~ June 2022 to Present</h2><br>
+        <h3>Title: EHS Manager Beloit, KS & Cawker City, KS, Environmental Health & Safety</h3>
+        <p> 
+            <br>Develop and support the implementation of EHS procedures, work standards, and best practices at both the
+            Beloit, KS and Cawker City, KS facilities.
+            <br>&#9758 Developed/Implemented Site Procedures including a Heat Illness Prevention Procedure using the
+            NEP guidelines that included time-of-day work adjustments, earlier stop times, and ice/water
+            machines in all departments.
+            <br>&#9758 Pushed the site to over 365 days safe by implementing best practices, unsafe act, unsafe
+            condition, and near-miss reporting, paired with safety project (kaizen) drawings that created
+            competition between all employees to find and fix unsafe conditions in their areas.
+            <br>&#9758 Implemented a safety appreciation program that rewarded SAFE behavior with “Caught Being
+            Safe” cards that employees could turn in for snacks, treats, drinks, and other small items.
+            <br>&#9758 Ensured multi-site compliance with Kansas Department of Health and Environment (KDHE), EPA,
+            OSHA, DOT, and AGCO corporation’s standards. Compliance included: Large quantity generator
+            biennial reports (for hazardous waste), special waste disposal, wastewater (pretreatment permit/SM
+            4500-H compliant field lab), stormwater, Tier II, Toxics Release Inventory (TRI), machine guarding,
+            LOTO, and more.<br><br>
+        </p>
+    </div>
+
+    <div class = "experience-container">
+        <h2>&#127970 Walmart, Pedricktown, NJ ~ October 2021 to June 2022</h2><br>
+        <h3>Title: Area Manager FC9042 & FC2296, Environmental Health & Safety</h3>
+        <p>
+            <br>Develop EHS team of 13 associates and leaders. Lead all team members to ensure consistent compliance
+            with EPA, DOT, OSHA, and company policies. Improve safety processes/procedures for the network by
+            benchmarking with other facilities and home office to ensure practicality for all. Automate administrative
+            tasks/processes using Microsoft Office tools to reduce non-value-added activities.
+            <br>&#9758 Implemented site contractor safety program to ensure compliance with company standards for all
+            visitors and contractors coming on site.
+            <br>&#9758 Developed processes/procedures including trailer control records (TCR) procedure, pest activity
+            reporting procedure, incident reporting procedure.
+            <br>&#9758 Removed risks associated with identified top losses by implementing engineering controls and
+            process changes.<br><br>
+        </p>
+    </div>
+
+        <!-- Whirlpool Job Experience-->
+    <div class = "experience-container">
+        <h2>&#127970 Whirlpool Corporation, Tulsa, OK ~ February 2016 to September 2021</h2><br>
+        <h3>Title: Safety (SAF) Pillar Specialist, World Class Manufacturing</h3>
+        <p>
+            <br>Oversaw implementation of the 7-step world class manufacturing methodology for Safety in a manufacturing
+            setting. Lead team of four to successfully expand this methodology throughout 11 different functions in the
+            manufacturing areas. Worked with the engineering teams across several states to perform Machine Safety
+            Risk Assessments for new equipment being installed inside of the facility.
+            <br>&#9758 Develop training materials for lockout-tagout, confined space, work at heights, overhead cranes, PIT.
+            <br>&#9758 Created extensive trends databases and charting to identify and visualize top losses by work-zone.
+            <br>&#9758 Capital expense projects attacking top losses including overhead crane attachments, safety visuals projectors, and work-zone perimeter guarding for high-risk area.
+            <br>&#9758 Machine Safety Risk Assessments complaint in both OSHA and ANSI standards.
+            <br>&#9758 Review, approve, and create LOTO procedures using the Brady Link360 software.
+            <br>&#9758 Developed layouts/designs using AutoCAD computer aided design software to create emergency evacuation and take shelter visuals along with security layouts, capital expense project designs and visualization.<br><br>
+        </p>
+
+        <h3>Title: Environmental (ENV) Pillar Specialist, World Class Manufacturing</h3>
+        <p>
+            <br>Led the World Class Manufacturing Environmental (ENV) Pillar to a score of 1 within a year. Oversaw
+            implementation of the 7-step world class manufacturing methodology for environmental in a manufacturing
+            setting. Reduced major environmental impacts like Styrofoam and plastics by working with our industrial
+            engineering team to reduce amount of production parts coming in non-recyclable packaging.
+            <br>&#9758 Score of 1 achieved during external WCM audit.
+            <br>&#9758 Identified and reduced major aspects and impacts including Styrofoam through vendor packaging
+            changes and oil absorbents through a washable absorbent program that recycled both the oil and the
+            absorbent.
+            <br>&#9758 Reduced waste transportation costs by 23%.
+            <br>&#9758 Improved Zero Waste to Landfill percentage from 89% to 93% within one year.
+            <br>&#9758 Eliminated $113,000 in waste transportation and sortation costs for the site within one year.
+            <br>&#9758 Semi-Annual Wastewater Treatment Compliance Report for the City of Tulsa.
+            <br>&#9758 Implemented SPCC and SWPPP program updates when new fulfillment center was added on
+            property.<br><br>
+        </p>
+
+        <h3>Title: EHS Process Technician, Environmental Health & Safety</h3>
+        <p>
+            <br>Worked with the senior EHS manager and two peers on site to promote safety culture in the manufacturing
+            areas. Performed job safety risk assessments on all work areas in the facility and worked closely with the
+            engineering and production teams to correct unsafe conditions in the workplace. Also provided employees a
+            way to report unsafe conditions, unsafe acts, and near-miss events in the facility to support a reduction in
+            incidents.
+            <br>&#9758 Job Safety Risk Assessments for all work areas completed and used to implement safety controls.
+            <br>&#9758 Implemented near-miss, unsafe act, and unsafe condition reporting for all employees.
+            <br>&#9758 Master trainer for Forklift, Overhead Crane, Manlift, Lockout-Tagout, and Die Carts.
+            <br>&#9758 Rolled out ergonomic study program using the Humantech online software.
+            <br>&#9758 Root Cause Analysis with the production team to ensure root causes of incidents and events were found.
+        </p>
+    </div>
+
+
+
+  </div>
+
+</body>
+</html>
