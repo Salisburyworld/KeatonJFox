@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Personal Blog</title>
+  <style>
+    /* CSS styles go here */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex; /* New */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif, Arial;
+    background-color: #f9f9fa;
+    color: #222;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 2px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    top: 80px; /* To avoid header */
+    bottom: 0;
+}
+ 
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 120px;
+    background: #11141a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+ 
+.logo {
+    font-size: 25px;
+    color: #fff;
+    left: 5px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+nav a:hover,
+nav a.active {
+    color: #ff6a00;
+}
+    
+    main {
+      margin: 20px;
+      width: 80%;
+    }
+    
+    .blog-post {
+      width: 80%;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      padding: 20px;
+      transition: all 0.3s;
+    }
+    
+    .blog-post h2 {
+      color: #333;
+      font-size: 24px;
+      margin: 0;
+      cursor: pointer;
+    }
+    
+    .blog-post p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-top: 10px;
+      display: none;
+    }
+    
+    .blog-post.active p {
+      display: block;
+    }
+    
+    .blog-post .read-more {
+      color: #666;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-top: 10px;
+      display: none;
+    }
+    
+    .blog-post.active .read-more {
+      display: inline-block;
+    }
+
+  </style>
+  <script>
+    function openHome(url) {
+      window.location.href = url;
+    }
+    function openAboutMe(url) {
+      window.location.href = url;
+    }
+    function openServices(url) {
+      window.location.href = url;
+    }
+    function openBlog(url) {
+      window.location.href = url;
+    }
+
+
+    // You can add your own scripts or use libraries
+    
+    // Example code: Expanding and collapsing blog posts
+    window.addEventListener('DOMContentLoaded', () => {
+      const blogPosts = document.querySelectorAll('.blog-post');
+      
+      blogPosts.forEach((post) => {
+        const title = post.querySelector('h2');
+        const content = post.querySelector('p');
+        const readMore = post.querySelector('.read-more');
+        
+        title.addEventListener('click', () => {
+          post.classList.toggle('active');
+          content.style.display = post.classList.contains('active') ? 'block' : 'none';
+          readMore.textContent = post.classList.contains('active') ? '-' : '+';
+        });
+      });
+    });
+  </script>
+  </script>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Keaton J. Fox</a>
+    
+        <nav>
+            <a href="#home" class="button" onclick="openHome('file:///C:/Users/Keaton%20J/Documents/My%20Web%20Sites/Keaton%20J.%20Fox/home.html')">Home</a>
+            <a href="#aboutme" class="button" onclick="openAboutMe('file:///C:/Users/Keaton%20J/Documents/My%20Web%20Sites/Keaton%20J.%20Fox/aboutpage.html')">About Me</a>
+            <a href="#services" class="button" onclick="openServices('')">Services</a>
+            <a href="#blog" class="button" onclick="openBlog('file:///C:/Users/Keaton%20J/Documents/My%20Web%20Sites/Keaton%20J.%20Fox/bloghome.html')">Blog</a>
+        </nav>
+    </header>
+
+  <main>
+    <div class="blog-post">
+      <h2>How should you handle an OSHA inspection? <span class="read-more">+</span></h2>
+      <p>rhfpaoehfiap;eoihbfapwfgha</p>
+    </div>
+
+    <div class="blog-post">
+      <h2>How to create a site-specific safety procedure. <span class="read-more">+</span></h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet nisl et purus cursus viverra ac ut nisl.</p>
+    </div>
+    
+    <!-- Add more blog posts here -->
+  </main>
+
+</body>
+</html>
