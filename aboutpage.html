@@ -76,12 +76,20 @@ nav a.active {
     border-width: thin;
 }
 
-.k-image img {
-    width: 100px; /* Adjusted for mobile */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 5%;
-    margin-top: 70px; /* Adjusted to not overlap the header */
+.k-image {
+    width: 100%; /* Use 100% width for full responsiveness */
+    display: flex; /* Use flex to center the image */
+    justify-content: center; /* Center the image horizontally */
+    margin-top: 80px; /* Adjust this as needed */
 }
+
+.k-image img {
+    width: 150px; /* Adjust the width as needed */
+    height: auto; /* Keep the height automatic for aspect ratio */
+    border-radius: 5%; /* Keep the border-radius if needed */
+    margin-bottom: 20px; /* Add some space below the image */
+}
+
 
 .image-text small {
     display: block;
@@ -137,7 +145,7 @@ p {
         position: fixed;
         top: 95px;
         left: 15px;
-        width: 150px;
+        width: 200px; /* Larger image on desktop */
         height: 200px;
     }
 
@@ -161,6 +169,12 @@ p {
 
     p {
         font-size: 18px;
+    }
+}
+    
+@media (max-width: 767px) {
+    .k-image {
+        margin-top: 100px; /* More space on mobile to avoid overlapping the header */
     }
 }
     
@@ -193,8 +207,8 @@ p {
         </nav>
     </header>
 
-  <div class = "k-image">
-    <img src="Face.jpg">
+  <div class="k-image">
+    <img src="Face.jpg" alt="Keaton J. Fox">
   </div>
 
   <div class = "image-text">
