@@ -16,21 +16,19 @@
 }
 
 body {
-    display: flex; /* New */
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column; /* Updated for better stacking on mobile */
     min-height: 100vh;
-    font-family: 'Poppins', sans-serif, Arial;
     background-color: #f9f9fa;
     color: #222;
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 2px;
+    padding-top: 100px; /* Adjusted to account for fixed header */
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
     background-size: cover;
     background-position: center;
-    position: relative;
-    top: 80px; /* To avoid header */
-    bottom: 0;
 }
  
 header {
@@ -38,77 +36,116 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 120px;
+    padding: 15px 10%; /* Adjusted padding */
     background: #11141a;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 1000; /* Increased z-index */
 }
  
 .logo {
-    font-size: 25px;
+    font-size: 2rem; /* Responsive font size */
     color: #fff;
-    left: 5px;
     text-decoration: none;
     font-weight: 600;
 }
 
+nav {
+    display: flex; /* Ensure nav is flex container */
+}
+
 nav a {
-    font-size: 18px;
+    font-size: 1.125rem; /* Responsive font size */
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 35px;
-    transition: .3s;
+    padding: 0 10px; /* Padding instead of margin for better touch targets */
+    transition: color .3s;
 }
+
 nav a:hover,
 nav a.active {
     color: #ff6a00;
 }
     
+main {
+    width: 90%; /* Full width for mobile */
+    margin: 0 auto;
+}
+
+.blog-post {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+    transition: all 0.3s;
+    width: 100%; /* Full width for mobile */
+}
+    
+.blog-post h2 {
+    color: #333;
+    font-size: 1.5rem; /* Responsive font size */
+    margin-bottom: 10px; /* Added margin for spacing */
+    cursor: pointer;
+}
+    
+.blog-post p {
+    color: #666;
+    font-size: 1rem; /* Responsive font size */
+    line-height: 1.5;
+    display: none; /* Hidden by default */
+}
+
+.blog-post.active p {
+    display: block;
+}
+    
+.read-more {
+    color: #666;
+    padding: 0 5px;
+    cursor: pointer;
+}
+    
+.blog-post.active .read-more {
+    display: inline-block;
+}
+
+/* Media Queries for Tablets */
+@media (min-width: 768px) {
+    body {
+        justify-content: flex-start;
+    }
+
+    header {
+        padding: 20px 120px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    nav a {
+        font-size: 18px;
+        margin-left: 35px;
+    }
+
     main {
-      margin: 20px;
-      width: 80%;
+        width: 80%;
     }
-    
+
     .blog-post {
-      width: 80%;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      margin-bottom: 20px;
-      padding: 20px;
-      transition: all 0.3s;
+        width: 80%;
     }
-    
+
     .blog-post h2 {
-      color: #333;
-      font-size: 24px;
-      margin: 0;
-      cursor: pointer;
+        font-size: 24px;
     }
-    
+
     .blog-post p {
-      color: #666;
-      font-size: 16px;
-      line-height: 1.5;
-      margin-top: 10px;
-      display: none;
+        font-size: 16px;
     }
-    
-    .blog-post.active p {
-      display: block;
-    }
-    
-    .read-more {
-      color: #666; /* Or any color that stands out against your background */
-      padding: 0 5px;
-      cursor: pointer;
-    }
-    
-    .blog-post.active .read-more {
-      display: inline-block;
-    }
+}
 
   </style>
   <script>
