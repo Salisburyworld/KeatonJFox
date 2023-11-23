@@ -17,13 +17,12 @@
 
 body {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     min-height: 100vh;
     background-color: #f9f9fa;
     color: #222;
-    padding-top: 60px; /* Adjusted to account for fixed header */
+    padding-top: 120px; /* Adjusted for header height */
     background-size: cover;
     background-position: center;
     position: relative;
@@ -43,22 +42,22 @@ header {
 }
 
 .logo {
-    font-size: 2rem; /* Responsive font size */
+    font-size: 2rem;
     color: #fff;
     text-decoration: none;
     font-weight: 600;
 }
 
 nav {
-    display: flex; /* Ensure nav is flex container */
+    display: flex;
 }
 
 nav a {
-    font-size: 1.125rem; /* Responsive font size */
+    font-size: 1.125rem;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    padding: 0 10px; /* Padding for better touch targets */
+    padding: 0 10px;
     transition: color .3s;
 }
 
@@ -68,7 +67,7 @@ nav a.active {
 }
 
 .container, .experience-container {
-    max-width: 95%;
+    max-width: 70%;
     margin: 20px auto;
     padding: 20px;
     border-collapse: collapse;
@@ -77,25 +76,23 @@ nav a.active {
 }
 
 .k-image {
-    width: 100%; /* Use 100% width for full responsiveness */
-    display: flex; /* Use flex to center the image */
-    justify-content: center; /* Center the image horizontally */
-    margin-top: 80px; /* Adjust this as needed */
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Spacing from the header */
 }
 
 .k-image img {
-    width: 150px; /* Adjust the width as needed */
-    height: auto; /* Keep the height automatic for aspect ratio */
-    border-radius: 5%; /* Keep the border-radius if needed */
-    margin-bottom: 20px; /* Add some space below the image */
+    width: 150px; /* Fixed width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5%;
+    margin-bottom: 20px;
 }
-
 
 .image-text small {
     display: block;
     background-color: transparent;
     text-align: center;
-    margin-top: 10px;
+    margin: 10px;
 }
 
 h1, .experience-container h2, .experience-container h3, p {
@@ -142,17 +139,14 @@ p {
     }
 
     .k-image img {
-        position: fixed;
-        top: 95px;
-        left: 15px;
-        width: 200px; /* Larger image on desktop */
-        height: 200px;
+        width: 200px;
+        height: auto;
     }
 
     .image-text small {
-        position: fixed;
-        top: 300px;
-        left: 40px;
+        position: relative;
+        top: initial;
+        left: initial;
     }
 
     h1 {
@@ -171,13 +165,22 @@ p {
         font-size: 18px;
     }
 }
-    
+
+/* Media Queries for Mobile Devices */
 @media (max-width: 767px) {
     .k-image {
-        margin-top: 100px; /* More space on mobile to avoid overlapping the header */
+        margin-top: 100px; /* More space on mobile */
+    }
+
+    .container, .experience-container {
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    .k-image img {
+        width: 120px; /* Smaller image on mobile */
     }
 }
-    
   </style>
   <script>
     function openHome(url) {
