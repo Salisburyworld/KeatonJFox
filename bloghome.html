@@ -117,17 +117,25 @@ main {
         justify-content: flex-start;
     }
 
-    header {
-        padding: 20px 120px;
+ header {
+        padding: 10px 20px; /* Reduced padding on smaller screens */
     }
-
+    
     .logo {
-        font-size: 25px;
+        font-size: 18px; /* Smaller font size for the logo */
+        padding-right: 20px; /* Add padding if logo and nav are inline */
     }
-
+    
+    nav {
+        flex-direction: column; /* Stack the nav items under the logo */
+        align-items: center; /* Center the nav items */
+    }
+    
     nav a {
-        font-size: 18px;
-        margin-left: 35px;
+        font-size: 16px; /* Smaller font size for nav links */
+        padding: 5px 0; /* Add some padding between stacked nav items */
+        margin-left: 0; /* Remove left margin from nav links */
+        text-align: center; /* Center the text for nav links */
     }
 
     main {
