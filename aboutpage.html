@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Page</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -16,124 +16,153 @@
 }
 
 body {
-    display: flex; /* New */
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     min-height: 100vh;
-    font-family: 'Poppins', sans-serif, Arial;
     background-color: #f9f9fa;
     color: #222;
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 2px;
+    padding-top: 60px; /* Adjusted to account for fixed header */
     background-size: cover;
     background-position: center;
     position: relative;
-    top: 80px; /* To avoid header */
-    bottom: 0;
 }
- 
+
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 120px;
+    padding: 10px; /* Adjusted padding */
     background: #11141a;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 1000;
 }
- 
+
 .logo {
-    font-size: 25px;
+    font-size: 2rem; /* Responsive font size */
     color: #fff;
-    left: 5px;
     text-decoration: none;
     font-weight: 600;
 }
 
+nav {
+    display: flex; /* Ensure nav is flex container */
+}
+
 nav a {
-    font-size: 18px;
+    font-size: 1.125rem; /* Responsive font size */
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 35px;
-    transition: .3s;
+    padding: 0 10px; /* Padding for better touch targets */
+    transition: color .3s;
 }
+
 nav a:hover,
 nav a.active {
     color: #ff6a00;
 }
 
-    .container {
-      max-width: 70%;
-      border-collapse: collapse;
-      margin: 0 auto;
-      padding: 40px;
+.container, .experience-container {
+    max-width: 95%;
+    margin: 20px auto;
+    padding: 20px;
+    border-collapse: collapse;
+    border-style: double;
+    border-width: thin;
+}
+
+.k-image img {
+    width: 100px; /* Adjusted for mobile */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5%;
+    margin-top: 70px; /* Adjusted to not overlap the header */
+}
+
+.image-text small {
+    display: block;
+    background-color: transparent;
+    text-align: center;
+    margin-top: 10px;
+}
+
+h1, .experience-container h2, .experience-container h3, p {
+    text-align: left;
+    padding: 5px;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.experience-container h2 {
+    font-size: 1.5rem;
+}
+
+.experience-container h3 {
+    font-size: 1.25rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+/* Media Queries for Tablets and Desktop */
+@media (min-width: 768px) {
+    header {
+        padding: 20px 120px;
     }
 
-    .experience.container h1 {
-      max-width: 60%;
-      font-size: 32px;
-      margin-bottom: 2px;
-      word-break: break-all;
-      text-decoration: underline;
-    }
-    .experience.container h2 {
-        max-width: 60%;
+    .logo {
         font-size: 25px;
-      margin-bottom: 2px;
-      font-weight: bold;
-      line-height: 0px;
-      word-break: break-all;
-    }
-    .experience.container h3 {
-        max-width: 60%;
-      font-size: 20px;
-      margin-bottom: 2px;
-      line-height: 0px;
-      font-weight: bold;
-      word-break: break-all;
-      text-decoration: underline;
     }
 
-    p {
-      font-size: 18px;
-      padding: 40px;
-      line-height: 1.5;
-      margin-bottom: 10px;
+    nav a {
+        font-size: 18px;
+        margin-left: 35px;
     }
 
-    .experience.container {
-      max-width: 60%;
-      border-collapse: collapse;
-      margin: 0 auto;
-      padding: 40px;
-      font-size: 18px;
-      line-height: 1.5;
-      margin-bottom: 10px;
-      border-style: double;
-      border-width: thin;
+    .container, .experience-container {
+        max-width: 70%;
+        padding: 40px;
     }
 
-    .k-image img{
+    .k-image img {
         position: fixed;
         top: 95px;
         left: 15px;
         width: 150px;
         height: 200px;
-        border-radius: 5%;
-
     }
+
     .image-text small {
         position: fixed;
         top: 300px;
         left: 40px;
-        background-color: transparent;
-        border-color: none;
     }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .experience-container h2 {
+        font-size: 25px;
+    }
+
+    .experience-container h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
     
   </style>
   <script>
