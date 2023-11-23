@@ -132,21 +132,20 @@ nav a.active {
     // You can add your own scripts or use libraries
     
     // Example code: Expanding and collapsing blog posts
-    window.addEventListener('DOMContentLoaded', () => {
-      const blogPosts = document.querySelectorAll('.blog-post');
-      
-      blogPosts.forEach((post) => {
-        const title = post.querySelector('h2');
-        const content = post.querySelector('p');
-        const readMore = post.querySelector('.read-more');
-        
-        title.addEventListener('click', () => {
-          post.classList.toggle('active');
-          content.style.display = post.classList.contains('active') ? 'block' : 'none';
-          readMore.textContent = post.classList.contains('active') ? '-' : '+';
-        });
-      });
+   window.addEventListener('DOMContentLoaded', () => {
+  const blogPosts = document.querySelectorAll('.blog-post');
+  
+  blogPosts.forEach((post) => {
+    const readMore = post.querySelector('.read-more');
+    const details = post.querySelector('.post-details');
+    
+    readMore.addEventListener('click', () => {
+      const isDetailsVisible = details.style.display === 'block';
+      details.style.display = isDetailsVisible ? 'none' : 'block';
+      readMore.textContent = isDetailsVisible ? '+' : '-';
     });
+  });
+});
   </script>
   </script>
 </head>
@@ -162,9 +161,11 @@ nav a.active {
         </nav>
     </header>
 
-  <main>
-    <div class="blog-post">
-      <h2>How to get ahead of an OSHA inspection! <span class="read-more">+</span></h2>
+ <main>
+ <div class="blog-post">
+  <h2>How to get ahead of an OSHA inspection! <span class="read-more">+</span></h2>
+  <div class="post-details" style="display: none;">
+    <ul>
       <p>The most important thing to do ahead of an inspection is ensure that all required written policies and procedures, training documentation, and OSHA Forms are current and ready to be shared. 
         <li>READ THE FIELD OPERATIONS MANUAL(FOM) found here→ <a href="https://www.osha.gov/enforcement/directives/cpl-02-00-164#20230123_ch17">www.osha.gov/enforcement/directives/cpl-02-00-164</a> </li>
         <li>Keep a document audit checklist for all OSHA required documentation that you can check off weekly to verify nothing is missed. For example the checklist could include: "Have all new forklift operators been trained, training documentation filed, and licenses been provided to those operators before they are able to operate wihtout supervision?" or 
@@ -173,10 +174,14 @@ nav a.active {
         <li>Train your employees on the OSHA inspection process so they are prepared ahead of time.</li>
         <li>Perform a mock inspection based on a recent recordable incident or high-potential near-miss to ensure there are no gaps in that process.</li>
       </p>
-    </div>
+    </ul>
+  </div>
+</div>
 
     <div class="blog-post">
-      <h2>How should you handle an OSHA inspection? <span class="read-more">+</span></h2>
+    <h2>How should you handle an OSHA inspection? <span class="read-more">+</span></h2>
+    <div class="post-details" style="display: none;">
+     <ul>
       <p>When the officer notifies the site's owner/operator (or their designee) that they are present to perform an inspection, there are several critical items to consider when proceeding:
         <li>READ THE FIELD OPERATIONS MANUAL(FOM) found here→ <a href="https://www.osha.gov/enforcement/directives/cpl-02-00-164#20230123_ch17">www.osha.gov/enforcement/directives/cpl-02-00-164</a> </li>
         <li>When initially speaking to the officer, avoid discussing the reason for their visit until all of the stakeholders for the site are notified and present. If stakeholders also include corporate 
@@ -190,7 +195,9 @@ nav a.active {
         <li>Know when to seek help or legal counsel! Not everyone is able to control themselves during an inspection, so don't be afraid to hand it off to someone who can!</li>
         <li>BE PREPARED! If you need assistance from an third-party, GET IN CONTACT WITH THEM NOW so you can count on them to be on site immediately following the officers arrival.</li>
       </p>
-    </div>
+    </ul>
+  </div>
+</div>
 
     <div class="blog-post">
       <h2>How to create a site-specific safety procedure. <span class="read-more">+</span></h2>
