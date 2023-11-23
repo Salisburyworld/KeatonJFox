@@ -100,13 +100,10 @@ nav a.active {
       display: block;
     }
     
-    .blog-post .read-more {
-      color: #666;
+    .read-more {
+      color: #666; /* Or any color that stands out against your background */
+      padding: 0 5px;
       cursor: pointer;
-      font-size: 16px;
-      line-height: 1.5;
-      margin-top: 10px;
-      display: none;
     }
     
     .blog-post.active .read-more {
@@ -131,21 +128,21 @@ nav a.active {
 
     // You can add your own scripts or use libraries
     
-    // Example code: Expanding and collapsing blog posts
-   window.addEventListener('DOMContentLoaded', () => {
-  const blogPosts = document.querySelectorAll('.blog-post');
-  
-  blogPosts.forEach((post) => {
-    const readMore = post.querySelector('.read-more');
-    const details = post.querySelector('.post-details');
+    // Expanding and collapsing blog posts
+   document.addEventListener('DOMContentLoaded', () => {
+    const blogPosts = document.querySelectorAll('.blog-post');
+
+    blogPosts.forEach((post) => {
+      const readMore = post.querySelector('.read-more');
+      const postDetails = post.querySelector('.post-details');
     
-    readMore.addEventListener('click', () => {
-      const isDetailsVisible = details.style.display === 'block';
-      details.style.display = isDetailsVisible ? 'none' : 'block';
-      readMore.textContent = isDetailsVisible ? '+' : '-';
+      readMore.addEventListener('click', () => {
+        const isDetailsVisible = postDetails.style.display === 'block';
+        postDetails.style.display = isDetailsVisible ? 'none' : 'block';
+        readMore.textContent = isDetailsVisible ? '+' : '-';
+      });
     });
   });
-});
   </script>
   </script>
 </head>
