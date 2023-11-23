@@ -8,19 +8,15 @@
 }
 
 body {
-    display: flex; /* New */
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     min-height: 100vh;
-    font-family: 'Poppins', sans-serif, Arial;
-    background: url('GOPR0295.JPG') no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    top: 80px; /* To avoid header */
-    bottom: 0;
+    background: url('GOPR0295.JPG') no-repeat center center/cover;
+    padding-top: 60px; /* Adjusted to account for fixed header */
 }
- 
+
 header {
     position: fixed;
     top: 0;
@@ -31,15 +27,18 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 1000;
 }
- 
+
 .logo {
     font-size: 25px;
     color: #fff;
-    left: 5px;
     text-decoration: none;
     font-weight: 600;
+}
+
+nav {
+    display: flex;
 }
 
 nav a {
@@ -47,9 +46,10 @@ nav a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 35px;
-    transition: .3s;
+    padding: 0 10px;
+    transition: color .3s;
 }
+
 nav a:hover,
 nav a.active {
     color: #ff6a00;
@@ -61,18 +61,74 @@ nav a.active {
     align-items: center;
     margin-top: 50px;
     text-align: center;
-  }
-  
-  .description-container img {
-    width: 300px;
-    height: 400px;
+    padding: 0 20px;
+}
+
+.description-container img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
     border-radius: 5%;
     margin-bottom: 20px;
-  }
-  
-  .description-container b {
-    font-size: 18px;
-    width: 600px;
+}
+
+.description-container b {
+    font-size: 1rem;
+    max-width: 600px;
+    width: 100%;
     line-height: 1.5;
     color: #222;
-  }
+}
+
+@media (max-width: 767px) {
+    header {
+        padding: 10px;
+    }
+
+    .logo,
+    nav a {
+        font-size: 16px;
+    }
+
+    nav {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0;
+    }
+
+    .description-container {
+        margin-top: 60px;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        justify-content: flex-start;
+        padding-top: 80px;
+    }
+
+    header {
+        padding: 20px 120px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    nav a {
+        font-size: 18px;
+        margin-left: 35px;
+    }
+
+    .description-container {
+        margin-top: 80px;
+    }
+
+    .description-container img {
+        width: 300px;
+    }
+
+    .description-container b {
+        font-size: 18px;
+    }
+}
