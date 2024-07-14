@@ -5,30 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Personal Blog</title>
   <style>
-    /* CSS styles go here */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:wght@700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #f9f9fa;
-    color: #222;
-    padding-top: 60px; /* Adjusted to account for fixed header */
-    padding-left: 2px;
-    padding-right: 2px;
-    padding-bottom: 2px;
-    background-size: cover;
-    background-position: center;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #f0f8ff; /* Light blue background */
 }
 
 header {
@@ -36,8 +27,9 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 120px; /* Original padding */
-    background: #11141a;
+    padding: 20px 120px;
+    background: #fff; /* Completely white navbar */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,8 +37,8 @@ header {
 }
 
 .logo {
-    font-size: 25px; /* Original font size */
-    color: #fff;
+    font-size: 25px;
+    color: #000;
     text-decoration: none;
     font-weight: 600;
 }
@@ -56,8 +48,8 @@ nav {
 }
 
 nav a {
-    font-size: 18px; /* Original font size */
-    color: #fff;
+    font-size: 18px;
+    color: #000;
     text-decoration: none;
     font-weight: 500;
     padding: 0 10px; /* Padding for better touch targets */
@@ -71,7 +63,8 @@ nav a.active {
 
 main {
     width: 80%; /* Adjusted for desktop */
-    margin: 20px auto;
+    margin: 120px auto 20px auto; /* Adjusted for spacing below header */
+    font-family: 'Roboto', sans-serif; /* Use Roboto font */
 }
 
 .blog-post {
@@ -80,31 +73,38 @@ main {
     margin-bottom: 20px;
     padding: 20px;
     transition: all 0.3s;
-    width: 80%; /* Adjusted for desktop */
 }
 
 .blog-post h2 {
-    color: #333;
-    font-size: 24px; /* Original font size */
-    margin-bottom: 10px;
+    color: #003366; /* Dark blue color */
+    font-size: 30px; /* Adjusted font size */
+    margin: 0;
     cursor: pointer;
+    text-align: center; /* Center heading */
 }
 
-.blog-post p {
+.blog-post p,
+.blog-post ul {
     color: #666;
-    font-size: 16px; /* Original font size */
+    font-size: 18px; /* Adjusted font size */
     line-height: 1.5;
+    margin-top: 10px;
     display: none;
 }
 
-.blog-post.active p {
+.blog-post.active p,
+.blog-post.active ul {
     display: block;
 }
 
 .read-more {
     color: #666;
-    padding: 0 5px;
     cursor: pointer;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 10px;
+    text-align: center; /* Center read-more text */
+    display: block;
 }
 
 .blog-post.active .read-more {
@@ -134,44 +134,40 @@ main {
     }
 
     .blog-post {
-        width: 95%; /* Full width for mobile */
+        width: 100%; /* Full width for mobile */
     }
 }
-
   </style>
   <script>
     function openHome(url) {
-      window.location.href = url;
+        window.location.href = url;
     }
     function openAboutMe(url) {
-      window.location.href = url;
+        window.location.href = url;
     }
     function openServices(url) {
-      window.location.href = url;
+        window.location.href = url;
     }
     function openBlog(url) {
-      window.location.href = url;
+        window.location.href = url;
     }
 
-
-    // You can add your own scripts or use libraries
-    
     // Expanding and collapsing blog posts
-   document.addEventListener('DOMContentLoaded', () => {
-    const blogPosts = document.querySelectorAll('.blog-post');
+    document.addEventListener('DOMContentLoaded', () => {
+        const blogPosts = document.querySelectorAll('.blog-post');
 
-    blogPosts.forEach((post) => {
-      const readMore = post.querySelector('.read-more');
-      const postDetails = post.querySelector('.post-details');
-    
-      readMore.addEventListener('click', () => {
-        const isDetailsVisible = postDetails.style.display === 'block';
-        postDetails.style.display = isDetailsVisible ? 'none' : 'block';
-        readMore.textContent = isDetailsVisible ? '+' : '-';
-      });
+        blogPosts.forEach((post) => {
+            const readMore = post.querySelector('.read-more');
+            const postDetails = post.querySelector('.post-details');
+
+            readMore.addEventListener('click', () => {
+                const isDetailsVisible = postDetails.style.display === 'block';
+                postDetails.style.display = isDetailsVisible ? 'none' : 'block';
+                readMore.textContent = isDetailsVisible ? '+' : '-';
+                post.classList.toggle('active');
+            });
+        });
     });
-  });
-  </script>
   </script>
 </head>
 <body>
@@ -186,51 +182,46 @@ main {
         </nav>
     </header>
 
- <main>
- <div class="blog-post">
-  <h2>How to get ahead of an OSHA inspection! <span class="read-more">+</span></h2>
-  <div class="post-details" style="display: none;">
-    <ul>
-      <p>The most important thing to do ahead of an inspection is ensure that all required written policies and procedures, training documentation, and OSHA Forms are current and ready to be shared. 
-        <li>READ THE FIELD OPERATIONS MANUAL(FOM) found here→ <a href="https://www.osha.gov/enforcement/directives/cpl-02-00-164#20230123_ch17">www.osha.gov/enforcement/directives/cpl-02-00-164</a> </li>
-        <li>Keep a document audit checklist for all OSHA required documentation that you can check off weekly to verify nothing is missed. For example the checklist could include: "Have all new forklift operators been trained, training documentation filed, and licenses been provided to those operators before they are able to operate wihtout supervision?" or 
-        "Are OSHA Forms up to date with all current recordable incident information?"</li>
-        <li>Keep a program audit checklist for all OSHA required written programs that you can check off weekly to ensure there are no changes in the process or no updates required. The checklist could include a list of all written programs with "OK" and "NOK" checkboxes with a comments section to the right of each item.</li>
-        <li>Train your employees on the OSHA inspection process so they are prepared ahead of time.</li>
-        <li>Perform a mock inspection based on a recent recordable incident or high-potential near-miss to ensure there are no gaps in that process.</li>
-      </p>
-    </ul>
-  </div>
-</div>
+    <main>
+        <div class="blog-post">
+            <h2>How to get ahead of an OSHA inspection! <span class="read-more">+</span></h2>
+            <div class="post-details" style="display: none;">
+                <ul>
+                    <li>READ THE FIELD OPERATIONS MANUAL(FOM) found here→ <a href="https://www.osha.gov/enforcement/directives/cpl-02-00-164#20230123_ch17">www.osha.gov/enforcement/directives/cpl-02-00-164</a></li>
+                    <li>Keep a document audit checklist for all OSHA required documentation that you can check off weekly to verify nothing is missed. For example, the checklist could include: "Have all new forklift operators been trained, training documentation filed, and licenses been provided to those operators before they are able to operate without supervision?" or "Are OSHA Forms up to date with all current recordable incident information?"</li>
+                    <li>Keep a program audit checklist for all OSHA required written programs that you can check off weekly to ensure there are no changes in the process or no updates required. The checklist could include a list of all written programs with "OK" and "NOK" checkboxes with a comments section to the right of each item.</li>
+                    <li>Train your employees on the OSHA inspection process so they are prepared ahead of time.</li>
+                    <li>Perform a mock inspection based on a recent recordable incident or high-potential near-miss to ensure there are no gaps in that process.</li>
+                </ul>
+            </div>
+        </div>
 
-    <div class="blog-post">
-    <h2>How should you handle an OSHA inspection? <span class="read-more">+</span></h2>
-    <div class="post-details" style="display: none;">
-     <ul>
-      <p>When the officer notifies the site's owner/operator (or their designee) that they are present to perform an inspection, there are several critical items to consider when proceeding:
-        <li>READ THE FIELD OPERATIONS MANUAL(FOM) found here→ <a href="https://www.osha.gov/enforcement/directives/cpl-02-00-164#20230123_ch17">www.osha.gov/enforcement/directives/cpl-02-00-164</a> </li>
-        <li>When initially speaking to the officer, avoid discussing the reason for their visit until all of the stakeholders for the site are notified and present. If stakeholders also include corporate 
-          management (corporate OSH), they should be notified as well before consenting to any inspection. Corporate OSH will likely have experience controling inspections previously or may have a specific procedure to follow for such events.</li>
-        <li>Always remember that, unless they have a warrant already, you must consent to the inspection. This is why it is critical to have all stakeholders present when this decision is made!</li>
-        <li>Also remember that, unless they have a warrant, you can control the entire inspection so long as they are able to inspect their area(s) of focus.</li>
-        <li>If stakeholders also include corporate management (corporate OSH), they should be notified as well before consenting to any inspection. They will likely have experience controling inspections previously.</li>
-        <li>If you consent, contain the inspection and officer to the specific area their inspection is focused on. You should always avoid walking an officer through the entire facility to reach the area of focus. 
-          Options for avoiding this include driving around the grounds using the route where operations is least visible, or bringing the focus to them in an area where operations is not seen by the officer.</li>
-        <li>If the officer attempts to move further into, or closer to, the operations area because they "saw something," respectfully request that they remain in the area(s) you specified.</li>
-        <li>Know when to seek help or legal counsel! Not everyone is able to control themselves during an inspection, so don't be afraid to hand it off to someone who can!</li>
-        <li>BE PREPARED! If you need assistance from an third-party, GET IN CONTACT WITH THEM NOW so you can count on them to be on site immediately following the officers arrival.</li>
-      </p>
-    </ul>
-  </div>
-</div>
+        <div class="blog-post">
+            <h2>How should you handle an OSHA inspection? <span class="read-more">+</span></h2>
+            <div class="post-details" style="display: none;">
+                <ul>
+                    <li>READ THE FIELD OPERATIONS MANUAL(FOM) found here→ <a href="https://www.osha.gov/enforcement/directives/cpl-02-00-164#20230123_ch17">www.osha.gov/enforcement/directives/cpl-02-00-164</a></li>
+                    <li>When initially speaking to the officer, avoid discussing the reason for their visit until all of the stakeholders for the site are notified and present. If stakeholders also include corporate management (corporate OSH), they should be notified as well before consenting to any inspection. Corporate OSH will likely have experience controlling inspections previously or may have a specific procedure to follow for such events.</li>
+                    <li>Always remember that, unless they have a warrant already, you must consent to the inspection. This is why it is critical to have all stakeholders present when this decision is made!</li>
+                    <li>Also remember that, unless they have a warrant, you can control the entire inspection so long as they are able to inspect their area(s) of focus.</li>
+                    <li>If stakeholders also include corporate management (corporate OSH), they should be notified as well before consenting to any inspection. They will likely have experience controlling inspections previously.</li>
+                    <li>If you consent, contain the inspection and officer to the specific area their inspection is focused on. You should always avoid walking an officer through the entire facility to reach the area of focus. Options for avoiding this include driving around the grounds using the route where operations is least visible, or bringing the focus to them in an area where operations is not seen by the officer.</li>
+                    <li>If the officer attempts to move further into, or closer to, the operations area because they "saw something," respectfully request that they remain in the area(s) you specified.</li>
+                    <li>Know when to seek help or legal counsel! Not everyone is able to control themselves during an inspection, so don't be afraid to hand it off to someone who can!</li>
+                    <li>BE PREPARED! If you need assistance from a third-party, GET IN CONTACT WITH THEM NOW so you can count on them to be on site immediately following the officer's arrival.</li>
+                </ul>
+            </div>
+        </div>
 
-    <div class="blog-post">
-      <h2>How to create a site-specific safety procedure. <span class="read-more">+</span></h2>
-      <p>Coming Soon!</p>
-    </div>
-    
-    <!-- Add more blog posts here -->
-  </main>
+        <div class="blog-post">
+            <h2>How to create a site-specific safety procedure. <span class="read-more">+</span></h2>
+            <div class="post-details" style="display: none;">
+                <p>Coming Soon!</p>
+            </div>
+        </div>
+        
+        <!-- Add more blog posts here -->
+    </main>
 
 </body>
 </html>
