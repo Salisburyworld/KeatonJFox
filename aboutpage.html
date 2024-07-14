@@ -6,26 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Page</title>
   <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:wght@700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f9f9fa;
-    color: #222;
-    padding-top: 120px; /* Adjusted for header height */
-    background-size: cover;
-    background-position: center;
-    position: relative;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #f0f8ff; /* Light blue background */
 }
 
 header {
@@ -33,8 +28,9 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 10px; /* Adjusted padding */
-    background: #11141a;
+    padding: 20px 120px;
+    background: #fff; /* Completely white navbar */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,23 +38,19 @@ header {
 }
 
 .logo {
-    font-size: 2rem;
-    color: #fff;
+    font-size: 25px;
+    color: #000;
     text-decoration: none;
     font-weight: 600;
 }
 
-nav {
-    display: flex; /* Ensure nav is flex container */
-}
-
 nav a {
-    font-size: 18px; /* Original font size */
-    color: #fff;
+    font-size: 18px;
+    color: #000;
     text-decoration: none;
     font-weight: 500;
-    padding: 0 10px; /* Padding for better touch targets */
-    transition: color .3s;
+    margin-left: 35px;
+    transition: color 0.3s;
 }
 
 nav a:hover,
@@ -66,119 +58,99 @@ nav a.active {
     color: #ff6a00;
 }
 
-.container, .experience-container {
+.container {
     max-width: 70%;
-    margin: 20px auto;
-    padding: 20px;
-    border-collapse: collapse;
-    border-style: double;
-    border-width: thin;
+    margin: 0 auto;
+    padding: 40px;
+    font-family: 'Roboto', sans-serif; /* Use Roboto font */
+    color: #003366; /* Dark blue color */
 }
 
-.k-image {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px; /* Spacing from the header */
+.container h1, .container h2, .container h3 {
+    text-align: center; /* Center headings */
+    font-weight: 400; /* Remove bold */
 }
 
-.k-image img {
-    width: 150px; /* Fixed width for the image */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 5%;
+.container h1 {
+    font-size: 45px; /* Increased font size */
     margin-bottom: 20px;
+    word-break: break-word;
+    text-decoration: underline;
 }
 
-.image-text small {
-    display: block;
-    background-color: transparent;
-    text-align: center;
-    margin: 10px;
-}
-
-h1, .experience-container h2, .experience-container h3, p {
-    text-align: left;
-    padding: 5px;
-    line-height: 1.5;
+.container h2 {
+    font-size: 35px; /* Adjusted font size */
+    margin-bottom: 20px;
+    line-height: 1.2;
     word-break: break-word;
 }
 
-h1 {
-    font-size: 2rem;
-}
-
-.experience-container h2 {
-    font-size: 1.5rem;
-}
-
-.experience-container h3 {
-    font-size: 1.25rem;
+.container h3 {
+    font-size: 25px; /* Adjusted font size */
+    margin-bottom: 20px;
+    line-height: 1.2;
+    word-break: break-word;
+    text-decoration: underline;
 }
 
 p {
-    font-size: 1rem;
+    font-size: 18px;
+    padding: 20px;
+    line-height: 1.5;
+    margin-bottom: 10px;
 }
 
-/* Media Queries for Tablets and Desktop */
-@media (min-width: 768px) {
+.skills-list {
+    text-align: center; /* Center the text */
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+}
+
+.skills-list li {
+    font-size: 18px;
+    color: #003366; /* Dark blue color */
+    font-weight: 700;
+    margin: 10px 0; /* Add some space between items */
+}
+
+.experience-container {
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.k-image img {
+    display: none; /* Remove image */
+}
+
+.image-text small {
+    display: none; /* Remove name below image */
+}
+
+@media (max-width: 768px) {
     header {
-        padding: 20px 120px;
+        padding: 10px 20px;
     }
 
     .logo {
-        font-size: 25px;
-    }
-
-    nav a {
-        font-size: 18px;
-        margin-left: 35px;
-    }
-
-    .container, .experience-container {
-        max-width: 70%;
-        padding: 40px;
-    }
-
-    .k-image img {
-        width: 200px;
-        height: auto;
-    }
-
-    .image-text small {
-        position: relative;
-        top: initial;
-        left: initial;
-    }
-
-    h1 {
-        font-size: 32px;
-    }
-
-    .experience-container h2 {
-        font-size: 25px;
-    }
-
-    .experience-container h3 {
         font-size: 20px;
     }
 
-    p {
-        font-size: 18px;
-    }
-}
-
-/* Media Queries for Mobile Devices */
-@media (max-width: 767px) {
-    .k-image {
-        margin-top: 100px; /* More space on mobile */
+    nav a {
+        font-size: 16px;
+        margin-left: 20px;
     }
 
-    .container, .experience-container {
-        max-width: 95%;
-        padding: 20px;
+    .container h1, .container h2, .container h3 {
+        font-size: 24px;
     }
 
-    .k-image img {
-        width: 120px; /* Smaller image on mobile */
+    .experience-container {
+        max-width: 100%;
+        padding: 10px;
     }
 }
   </style>
@@ -230,80 +202,79 @@ p {
     </p>
     
     <h1>Skills</h1>
-    <p>
-        &#10003 Authorized OSHA Outreach Trainer 
-        <br>&#10003 Environmental Compliance
-        <br>&#10003 RCRA Hazardous Waste Management 
-        <br>&#10003 Claims Management (Worker's Comp.)
-        <br>&#10003 Project Management
-        <br>&#10003 Prevention through Design Z590.3 2021)
-        <br>&#10003 CPR/First-Aid/AED (BLS)
-        <br>&#10003 Autodesk AutoCAD 
-        <br>&#10003 Brady Link360 Software for LOTO & CS
-        <br>&#10003 Advanced Microsoft Office
-        <br>&#10003 Wicklander Investigations
-        <br>&#10003 Python Programming
-        <br>&#10003 Java Programming
-        <br>&#10003 HTML/CSS/JavaScript Development
-        <br>&#10003 C/C++ Programming<br><br><br>
-    </p>
+    <ul class="skills-list">
+        <li>&#10003; Project Management</li>
+        <li>&#10003; OSHA Authorized Trainer for 10 & 30-Hour</li>
+        <li>&#10003; RCRA Hazardous Waste Management</li>
+        <li>&#10003; Root Cause Analysis</li>
+        <li>&#10003; Environmental Reporting & Compliance</li>
+        <li>&#10003; Sustainability Reporting & Improvements</li>
+        <li>&#10003; CPR/First-Aid/AED (BLS)</li>
+        <li>&#10003; Computer-Aided Design</li>
+        <li>&#10003; Enablon & Gensuite Superuser</li>
+        <li>&#10003; Advanced Microsoft Office</li>
+        <li>&#10003; Wicklander Investigations</li>
+        <li>&#10003; Computer Science</li>
+    </ul>
+    <br><br>
 
-    <h1>Experience:</h1>
+    <h1>Work Experience:</h1>
 
-    <div class = "experience-container">
-        <h2>&#127970 AGCO Corporation, Kansas ~ June 2022 to Present</h2><br>
+    <div class="experience-container">
+        <h2>AGCO Corporation, Kansas ~ June 2022 to Present</h2>
         <h3>Title: EHS Manager Beloit, KS & Cawker City, KS, Environmental Health & Safety</h3>
         <p> 
             <br>Develop and support the implementation of EHS procedures, work standards, and best practices at both the
             Beloit, KS and Cawker City, KS facilities.
-            <br>&#9758 Developed/Implemented Site Procedures including a Heat Illness Prevention Procedure using the
+            <br>&#10003; Project manager for the global implementation of Enablon incident management, metrics reporting,
+            and action tracking for over 150 sites around the world.
+            <br>&#10003; Developed/Implemented Site Procedures including a Heat Illness Prevention Procedure using the
             NEP guidelines that included time-of-day work adjustments, earlier stop times, and ice/water
             machines in all departments.
-            <br>&#9758 Pushed the site to over 365 days safe by implementing best practices, unsafe act, unsafe
-            condition, and near-miss reporting, paired with safety project (kaizen) drawings that created
+            <br>&#10003; Implemented safety project (kaizen) drawings that created
             competition between all employees to find and fix unsafe conditions in their areas.
-            <br>&#9758 Implemented a safety appreciation program that rewarded SAFE behavior with “Caught Being
+            <br>&#10003; Implemented a safety appreciation program that fostered employee engagement and rewarded SAFE behavior with “Caught Being
             Safe” cards that employees could turn in for snacks, treats, drinks, and other small items.
-            <br>&#9758 Ensured multi-site compliance with Kansas Department of Health and Environment (KDHE), EPA,
+            <br>&#10003; Ensured multi-site compliance with Kansas Department of Health and Environment (KDHE), EPA,
             OSHA, DOT, and AGCO corporation’s standards. Compliance included: Large quantity generator
             biennial reports (for hazardous waste), special waste disposal, wastewater (pretreatment permit/SM
-            4500-H compliant field lab), stormwater, Tier II, Toxics Release Inventory (TRI), machine guarding,
+            4500-H compliant field lab), stormwater, Tier II, Toxics Release Inventory (TRI), Class II Air Permitting, machine guarding,
             LOTO, and more.<br><br>
         </p>
     </div>
 
-    <div class = "experience-container">
-        <h2>&#127970 Walmart, Pedricktown, NJ ~ October 2021 to June 2022</h2><br>
+    <div class="experience-container">
+        <h2>Walmart, Pedricktown, NJ ~ October 2021 to June 2022</h2><br>
         <h3>Title: Area Manager FC9042 & FC2296, Environmental Health & Safety</h3>
         <p>
             <br>Develop EHS team of 13 associates and leaders. Lead all team members to ensure consistent compliance
             with EPA, DOT, OSHA, and company policies. Improve safety processes/procedures for the network by
             benchmarking with other facilities and home office to ensure practicality for all. Automate administrative
             tasks/processes using Microsoft Office tools to reduce non-value-added activities.
-            <br>&#9758 Implemented site contractor safety program to ensure compliance with company standards for all
+            <br>&#10003; Implemented site contractor safety program to ensure compliance with company standards for all
             visitors and contractors coming on site.
-            <br>&#9758 Developed processes/procedures including trailer control records (TCR) procedure, pest activity
+            <br>&#10003; Developed processes/procedures including trailer control records (TCR) procedure, pest activity
             reporting procedure, incident reporting procedure.
-            <br>&#9758 Removed risks associated with identified top losses by implementing engineering controls and
+            <br>&#10003; Removed risks associated with identified top losses by implementing engineering controls and
             process changes.<br><br>
         </p>
     </div>
 
-        <!-- Whirlpool Job Experience-->
-    <div class = "experience-container">
-        <h2>&#127970 Whirlpool Corporation, Tulsa, OK ~ February 2016 to September 2021</h2><br>
+    <!-- Whirlpool Job Experience-->
+    <div class="experience-container">
+        <h2>Whirlpool Corporation, Tulsa, OK ~ February 2016 to September 2021</h2><br>
         <h3>Title: Safety (SAF) Pillar Specialist, World Class Manufacturing</h3>
         <p>
             <br>Oversaw implementation of the 7-step world class manufacturing methodology for Safety in a manufacturing
             setting. Lead team of four to successfully expand this methodology throughout 11 different functions in the
             manufacturing areas. Worked with the engineering teams across several states to perform Machine Safety
             Risk Assessments for new equipment being installed inside of the facility.
-            <br>&#9758 Develop training materials for lockout-tagout, confined space, work at heights, overhead cranes, PIT.
-            <br>&#9758 Created extensive trends databases and charting to identify and visualize top losses by work-zone.
-            <br>&#9758 Capital expense projects attacking top losses including overhead crane attachments, safety visuals projectors, and work-zone perimeter guarding for high-risk area.
-            <br>&#9758 Machine Safety Risk Assessments complaint in both OSHA and ANSI standards.
-            <br>&#9758 Review, approve, and create LOTO procedures using the Brady Link360 software.
-            <br>&#9758 Developed layouts/designs using AutoCAD computer aided design software to create emergency evacuation and take shelter visuals along with security layouts, capital expense project designs and visualization.<br><br>
+            <br>&#10003; Develop training materials for lockout-tagout, confined space, work at heights, overhead cranes, PIT.
+            <br>&#10003; Created extensive trends databases and charting to identify and visualize top losses by work-zone.
+            <br>&#10003; Capital expense projects attacking top losses including overhead crane attachments, safety visuals projectors, and work-zone perimeter guarding for high-risk area.
+            <br>&#10003; Machine Safety Risk Assessments complaint in both OSHA and ANSI standards.
+            <br>&#10003; Review, approve, and create LOTO procedures using the Brady Link360 software.
+            <br>&#10003; Developed layouts/designs using AutoCAD computer aided design software to create emergency evacuation and take shelter visuals along with security layouts, capital expense project designs and visualization.<br><br>
         </p>
 
         <h3>Title: Environmental (ENV) Pillar Specialist, World Class Manufacturing</h3>
@@ -312,15 +283,15 @@ p {
             implementation of the 7-step world class manufacturing methodology for environmental in a manufacturing
             setting. Reduced major environmental impacts like Styrofoam and plastics by working with our industrial
             engineering team to reduce amount of production parts coming in non-recyclable packaging.
-            <br>&#9758 Score of 1 achieved during external WCM audit.
-            <br>&#9758 Identified and reduced major aspects and impacts including Styrofoam through vendor packaging
+            <br>&#10003; Score of 1 achieved during external WCM audit.
+            <br>&#10003; Identified and reduced major aspects and impacts including Styrofoam through vendor packaging
             changes and oil absorbents through a washable absorbent program that recycled both the oil and the
             absorbent.
-            <br>&#9758 Reduced waste transportation costs by 23%.
-            <br>&#9758 Improved Zero Waste to Landfill percentage from 89% to 93% within one year.
-            <br>&#9758 Eliminated $113,000 in waste transportation and sortation costs for the site within one year.
-            <br>&#9758 Semi-Annual Wastewater Treatment Compliance Report for the City of Tulsa.
-            <br>&#9758 Implemented SPCC and SWPPP program updates when new fulfillment center was added on
+            <br>&#10003; Reduced waste transportation costs by 23%.
+            <br>&#10003; Improved Zero Waste to Landfill percentage from 89% to 93% within one year.
+            <br>&#10003; Eliminated $113,000 in waste transportation and sortation costs for the site within one year.
+            <br>&#10003; Semi-Annual Wastewater Treatment Compliance Report for the City of Tulsa.
+            <br>&#10003; Implemented SPCC and SWPPP program updates when new fulfillment center was added on
             property.<br><br>
         </p>
 
@@ -331,15 +302,13 @@ p {
             engineering and production teams to correct unsafe conditions in the workplace. Also provided employees a
             way to report unsafe conditions, unsafe acts, and near-miss events in the facility to support a reduction in
             incidents.
-            <br>&#9758 Job Safety Risk Assessments for all work areas completed and used to implement safety controls.
-            <br>&#9758 Implemented near-miss, unsafe act, and unsafe condition reporting for all employees.
-            <br>&#9758 Master trainer for Forklift, Overhead Crane, Manlift, Lockout-Tagout, and Die Carts.
-            <br>&#9758 Rolled out ergonomic study program using the Humantech online software.
-            <br>&#9758 Root Cause Analysis with the production team to ensure root causes of incidents and events were found.
+            <br>&#10003; Job Safety Risk Assessments for all work areas completed and used to implement safety controls.
+            <br>&#10003; Implemented near-miss, unsafe act, and unsafe condition reporting for all employees.
+            <br>&#10003; Master trainer for Forklift, Overhead Crane, Manlift, Lockout-Tagout, and Die Carts.
+            <br>&#10003; Rolled out ergonomic study program using the Humantech online software.
+            <br>&#10003; Root Cause Analysis with the production team to ensure root causes of incidents and events were found.
         </p>
     </div>
-
-
 
   </div>
 
